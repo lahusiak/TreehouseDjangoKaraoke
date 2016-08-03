@@ -13,8 +13,4 @@ class Song(models.Model):
   performer = models.ForeignKey(Performer, default=1)
   
   def __str__(self):
-      return '%s %s' % (self.title, self.artist)
-
-
-    
-  
+      return '{} by {}'.format(self.title, self.artist)
