@@ -4,7 +4,7 @@
 
 {% block content %}
 <h2>{{ song.title }}</h2>
-
+    <h2>{{ self.song }}</h2>
 <p>By {{ song.artist }}</p>
-<p>Sung by <a href="{% url 'performer:performer' pk=song.performer.pk %}">{{ song.performer }}</a></p>
+<p>Sung by <a href="{% url 'song:performer' pk=song.performer.pk %}">{{ song.performer }}</a></p>
 {% endblock %}
