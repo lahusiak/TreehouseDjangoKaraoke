@@ -24,6 +24,6 @@ Here are some details:
     
 Feel free to add other features, too, if you want. Like maybe the minutes:seconds version of how long the song is?
 
-You can check out the tests in songs/tests.py and run them with `python manage.py tests`.
+You can check out the tests in songs/tests.py and run them with `python manage.py test`.
 
 Good luck!
