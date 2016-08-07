@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ song.title }}{% endblock %}
+{% block title %}{{ self.song }}{% endblock %}
 
 {% block content %}
     <h2>Hello Song Detail</h2>
+    {% for song in songs %}
+    <div class="card">
+        <header><a href="{%  url 'songs:detail' pk=song.pk %}">{{ song.song }}</a></header>
+        <div class="card-copy">
+            {{ song.artist }}
+        </div>
+    </div>
+    {%  endfor %}
 <h2>{{ song.title }}</h2>
     <h2>{{ self.song }}</h2>
 <p>By {{ song.artist }}</p>
-<p>Performed by <a href="{% url 'song:performer' pk=song.performer.pk %}">{{ song.performer }}</a></p>
+<p>Performed by <a href="{% url 'songs:performer' pk=song.performer.pk %}">{{ song.performer }}</a></p>
 {% endblock %}

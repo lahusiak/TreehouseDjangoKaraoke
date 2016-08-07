@@ -23,3 +23,5 @@ urlpatterns = [
     url(r'^songs/', include('songs.urls', namespace='songs')),
     url(r'^$', views.home, name='home'),
 ]
+
+# urlpatterns += staticfiles_urlpatterns()

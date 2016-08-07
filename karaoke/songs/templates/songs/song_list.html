@@ -4,10 +4,16 @@
 
 {% block content %}
 <h2>Upcoming Songs</h2>
-
-<ul>
-    {% for song in songs %}
-    <li><a href="{% url 'songs:detail' pk=song.pk %}">{{ song }}</a> performed by <a href="{% url 'songs:performer' pk=song.performer.pk %}">{{ song.performer }}</a></li>
-    {% endfor %}
-</ul>
-{% endblock %}
+    <div class="cards">
+        {% for song in songs %}
+            <div class="card">
+            <header><a href="{%  url 'songs:detail' pk=song.pk %}">{{ song.title }}</a></header>
+            <div class="card-copy">
+                <a href="{%  url 'songs:performer' pk=song.pk %}">
+                {{ song.artist }}
+                </a>
+        </div>
+    </div>
+{%  endfor %}
+    </div>
+{%  endblock %}

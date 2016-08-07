@@ -56,7 +56,7 @@ class ViewTests(TestCase):
         resp = self.client.get(reverse('songs:detail',
                                        kwargs={'pk': self.song.pk}))
         self.assertEqual(resp.status_code, 200)
-        self.assertEqual(resp.context['song'], self.song)
+        self.assertEqual(self.song, resp.context['song'])
         self.assertTemplateUsed(resp, 'songs/song_detail.html')
         
     def test_performer_detail_view(self):
